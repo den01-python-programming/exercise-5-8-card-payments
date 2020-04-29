@@ -35,7 +35,7 @@ def main():
     petesCard = PaymentCard(10)
 
     print("money " + str(petesCard.balance()))
-    boolean was_successful = petesCard.take_money(8)
+    was_successful = petesCard.take_money(8)
     print("successfully withdrew: " + str(was_successful))
     print("money " + str(petesCard.balance()))
 
@@ -69,21 +69,21 @@ class PaymentTerminal:
         self.affordable_meals = 0 # number of sold affordable meals
         self.hearty_meals = 0 # number of sold hearty meals
 
-    def eat_affordably(double payment):
-        # an affordable meal costs 2.50 euros
+    def eat_affordably(self,payment):
+        # an affordable meal costs 2.50 pounds
         # increase the amount of cash by the price of an affordable mean and return the change
         # if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
 
-    def eat_heartily(double payment):
-        # a hearty meal costs 4.30 euros
+    def eat_heartily(self,payment):
+        # a hearty meal costs 4.30 pounds
         # increase the amount of cash by the price of a hearty mean and return the change
         # if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
 
-    def __str__():
+    def __str__(self):
         return "money: " + str(money) + ", number of sold afforable meals: " + str(affordable_meals) + ", number of sold hearty meals: " + str(hearty_meals)
 ```
 
-The terminal starts with 1000 euros in it. Implement the methods so they work correctly, using the basis above and the example prints of the main program below.
+The terminal starts with 1000 pounds in it. Implement the methods so they work correctly, using the basis above and the example prints of the main program below.
 
 ```python
 def main():
@@ -117,12 +117,12 @@ class PaymentTerminal:
     # ...
 
     def eat_affordably(self, card):
-        # an affordable meal costs 2.50 euros
+        # an affordable meal costs 2.50 pounds
         # if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
         # otherwise false is returned
 
     def eat_heartily(self, card):
-        # a hearty meal costs 4.30 euros
+        # a hearty meal costs 4.30 pounds
         # if the payment card has enough money, the balance of the card is decreased by the price, and the method returns true
         # otherwise false is returned
 
@@ -137,7 +137,7 @@ Below is a main program to test the classes, and the output that is desired:
 def main():
     exact_amount = PaymentTerminal()
 
-    double change = exact_amount.eat_affordably(10)
+    change = exact_amount.eat_affordably(10)
     print("remaining change: " + str(change))
 
     annes_card = PaymentCard(7)
@@ -165,7 +165,7 @@ money: 1002.5, number of sold afforable meals: 2, number of sold hearty meals: 1
 Let's create a method for the terminal that can be used to add money to a payment card. Recall that the payment that is received when adding money to the card is stored in the register. The basis for the method:
 
 ```python
-def add_moneyToCard(self, card, sum):
+def add_money_to_card(self, card, sum):
     # ...
 ```
 
@@ -178,26 +178,26 @@ def main():
 
     annes_card = PaymentCard(2)
 
-    print("amount of money on the card is " + str(annes_card.balance()) + " euros")
+    print("amount of money on the card is " + str(annes_card.balance()) + " pounds")
 
     was_successful = exact_amount.eat_heartily(annes_card)
     print("there was enough money: " + str(was_successful))
 
-    exact_amount.add_moneyToCard(annes_card, 100)
+    exact_amount.add_money_to_card(annes_card, 100)
 
     was_successful = exact_amount.eat_heartily(annes_card)
     print("there was enough money: " + str(was_successful))
 
-    print("amount of money on the card is " + str(annes_card.balance()) + " euros")
+    print("amount of money on the card is " + str(annes_card.balance()) + " pounds")
 
     print(exact_amount)
 ```
 
 ```plaintext
 money: 1000.0, number of sold afforable meals: 0, number of sold hearty meals: 0
-amount of money on the card is 2.0 euros
+amount of money on the card is 2.0 pounds
 there was enough money: false
 there was enough money: true
-amount of money on the card is 97.7 euros
+amount of money on the card is 97.7 pounds
 money: 1100.0, number of sold afforable meals: 0, number of sold hearty meals: 1
 ```
