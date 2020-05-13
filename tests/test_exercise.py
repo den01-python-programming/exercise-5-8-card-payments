@@ -1,10 +1,14 @@
 import pytest
-from src.payment_card import PaymentCard
+import os
 
 def test_exercise():
+    os.chdir('src')
+
+    from payment_card import PaymentCard
+    from payment_terminal import PaymentTerminal
     card = PaymentCard(10)
 
-    assert card.balance() == 10
+    assert card.balance == 10
 
     assert card.take_money(8)
     assert not card.take_money(4)
@@ -24,7 +28,7 @@ def test_exercise():
     amount = PaymentTerminal()
     card = PaymentCard(2)
 
-    assert card.balance() == 2
+    assert card.balance == 2
 
     assert not amount.eat_heartily(card)
 
@@ -32,4 +36,4 @@ def test_exercise():
 
     assert amount.eat_heartily(card)
 
-    assert card.balance() == 97.7
+    assert card.balance == 97.7
