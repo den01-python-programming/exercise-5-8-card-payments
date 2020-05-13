@@ -80,7 +80,7 @@ class PaymentTerminal:
         # if the payment parameter is not large enough, no meal is sold and the method should return the whole payment
 
     def __str__(self):
-        return "money: " + str(money) + ", number of sold afforable meals: " + str(affordable_meals) + ", number of sold hearty meals: " + str(hearty_meals)
+        return "money: " + str(self.money) + ", number of sold afforable meals: " + str(self.affordable_meals) + ", number of sold hearty meals: " + str(self.hearty_meals)
 ```
 
 The terminal starts with 1000 pounds in it. Implement the methods so they work correctly, using the basis above and the example prints of the main program below.
@@ -129,7 +129,9 @@ class PaymentTerminal:
     # ...
 ```
 
-**NB:** card payments don't increase the amount of cash in the register
+**NB:** card payments don't increase the amount of cash in the register.
+
+**Hint:** Try using a `if type(payment) == float or type(payment) == int:` statement to work out whether the customer pays by card or cash. Handle each case differently.
 
 Below is a main program to test the classes, and the output that is desired:
 
