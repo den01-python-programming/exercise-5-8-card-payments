@@ -34,14 +34,14 @@ Test main program:
 def main():
     petesCard = PaymentCard(10)
 
-    print("money " + str(petesCard.balance()))
+    print("money " + str(petesCard.balance)
     was_successful = petesCard.take_money(8)
     print("successfully withdrew: " + str(was_successful))
-    print("money " + str(petesCard.balance()))
+    print("money " + str(petesCard.balance)
 
     was_successful = petesCard.take_money(4)
     print("successfully withdrew: " + str(was_successful))
-    print("money " + str(petesCard.balance()))
+    print("money " + str(petesCard.balance)
 }
 ```
 
@@ -180,7 +180,7 @@ def main():
 
     annes_card = PaymentCard(2)
 
-    print("amount of money on the card is " + str(annes_card.balance()) + " pounds")
+    print("amount of money on the card is " + str(annes_card.balance) + " pounds")
 
     was_successful = exact_amount.eat_heartily(annes_card)
     print("there was enough money: " + str(was_successful))
@@ -190,7 +190,7 @@ def main():
     was_successful = exact_amount.eat_heartily(annes_card)
     print("there was enough money: " + str(was_successful))
 
-    print("amount of money on the card is " + str(annes_card.balance()) + " pounds")
+    print("amount of money on the card is " + str(annes_card.balance) + " pounds")
 
     print(exact_amount)
 ```
